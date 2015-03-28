@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	 <meta name="viewport" content="width=320,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<title>图片压缩</title>
+	<script type="text/javascript" src="lib/exif.js"></script>
+	<script type="text/javascript" src="lib/megapix-image.js"></script>
+	<script type="text/javascript" src="icompress.js"></script>
+</head>
+<body>
+<div style="width:400px;margin:100px auto;">
+	<input type="file" id="file1">
+	<img src="" id="img">
+</div>
+<div id="canvas">
+	
+</div>
+<script type="text/javascript">
+	var compress=new icompress({
+		quality:0.8,
+		width:640,
+		pickbtn:document.getElementById("file1"),
+		success:function(res){
+			// console.log(res.originBase64);
+			document.getElementById("img").src=res.base64;
+		}
+	});
+</script>
+</body>
+</html>
